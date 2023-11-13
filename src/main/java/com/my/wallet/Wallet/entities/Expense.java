@@ -1,7 +1,21 @@
 package com.my.wallet.Wallet.entities;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table
 public class Expense {
 
+    @Id
+    @SequenceGenerator(
+            name = "expense_sequence",
+            sequenceName = "expense_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "expense_sequence"
+    )
     private Long id;
     private String description;
     private Double amount;
