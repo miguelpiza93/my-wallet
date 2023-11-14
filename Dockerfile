@@ -10,6 +10,7 @@ ARG WALLET_DB_PORT
 ARG WALLET_DB_NAME
 ARG WALLET_DB_USER
 ARG WALLET_DB_PASSWORD
+ARG WALLET_ENV
 
 # Set environment variables
 ENV WALLET_DB_HOST=$WALLET_DB_HOST
@@ -17,6 +18,7 @@ ENV WALLET_DB_PORT=$WALLET_DB_PORT
 ENV WALLET_DB_NAME=$WALLET_DB_NAME
 ENV WALLET_DB_USER=$WALLET_DB_USER
 ENV WALLET_DB_PASSWORD=$WALLET_DB_PASSWORD
+ENV WALLET_ENV=$WALLET_ENV
 
 RUN apt-get update && apt-get install -y gettext-base
 RUN envsubst < /app/src/main/resources/application.properties > /app/application-substituted.properties
