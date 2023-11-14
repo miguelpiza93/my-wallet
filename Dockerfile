@@ -24,11 +24,6 @@ RUN envsubst < /app/src/main/resources/application.properties > /app/application
 # Move the substituted properties file to replace the original
 RUN mv /app/application-substituted.properties /app/src/main/resources/application.properties
 
-RUN cat /app/src/main/resources/application.properties
-
-# Use envsubst to replace variables in application.properties
-COPY application.properties /app/application.properties
-
 RUN gradle build
 
 # Stage 2: Build Docker image
