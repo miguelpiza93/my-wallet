@@ -24,4 +24,12 @@ public class ExpenseService {
     public void create(Expense expense) {
         expenseRepository.save(expense);
     }
+
+    public void remove(Long expenseId) {
+        boolean found = expenseRepository.existsById(expenseId);
+        if(!found){
+            throw new IllegalStateException("Expense with id " + expenseId + " does not exists");
+        }
+        expenseRepository.deleteById(expenseId);
+    }
 }

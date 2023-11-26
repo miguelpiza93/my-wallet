@@ -28,4 +28,8 @@ public class ExpenseController {
         expenseService.create(expense);
     }
 
+    @DeleteMapping(path = "{expenseId}")
+    public void remove(@PathVariable("expenseId") Long expenseId) {
+        expenseService.remove(expenseId);
+    }
 }
