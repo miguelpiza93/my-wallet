@@ -21,8 +21,8 @@ public class ExpenseService {
         return expenseRepository.findAll();
     }
 
-    public void create(Expense expense) {
-        expenseRepository.save(expense);
+    public Expense create(Expense expense) {
+        return expenseRepository.save(expense);
     }
 
     public void remove(Long expenseId) {

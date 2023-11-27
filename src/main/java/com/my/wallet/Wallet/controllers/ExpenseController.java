@@ -24,8 +24,8 @@ public class ExpenseController {
     }
 
     @PostMapping
-    public void create(@RequestBody Expense expense){
-        expenseService.create(expense);
+    public Expense create(@RequestBody Expense expense){
+        return expenseService.create(expense);
     }
 
     @DeleteMapping(path = "{expenseId}")
